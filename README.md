@@ -1,73 +1,93 @@
-data_fetcher_mobile for MotionIQ
+Here’s a clean, professional, and concise GitHub README description for your **`data_fetcher_mobile`** app (MotionIQ), keeping it well-organized and suitable for your GitHub repo:
 
-Simple and Beautiful App for fetching and send sensor's data to server.
-Steps :
-First, you have to set the rabbitmq server's address and port in application.
+---
 
-Then, select appropriate sensors to send data.
+# MotionIQ – Data Fetcher Mobile
 
-click start button to send data.
+**MotionIQ** is a simple and elegant Android app for collecting sensor data (accelerometer, gyroscope, magnetometer) and sending it to a RabbitMQ server for real-time human activity recognition (HAR).
 
+## 🚀 Features
 
-Note :
-Don't forget to follow the following guide lines to start the application successfully.
+* 📱 Real-time mobile sensor data transmission
+* 🧠 Integration with activity recognition pipelines
+* 🐇 RabbitMQ-based message brokering
+* 💻 Java-based backend consumer
 
+## 📦 How to Use
 
-Platform Server
+1. Set the RabbitMQ server's IP address and port in the app.
+2. Select desired sensors via the app UI.
+3. Tap the **Start** button to begin data transmission.
 
-Overview
-A step-by-step guide for setting up a MotionIQ Human Activity Recognition System using RabbitMQ and an Android app. Data is transmitted from a mobile device to RabbitMQ queues and processed by a Java-based consumer.
+> ⚠️ **Important**: Follow setup guidelines carefully for successful operation.
 
-Features
-📱 Real-time data from mobile sensors
-🧠 Activity recognition pipeline
-🐇 RabbitMQ message brokering
-💻 Java consumer backend
-Setup Guide
-🔧 Installing RabbitMQ
-Download the installer from RabbitMQ Downloads
-Install and run the server
-Enable management UI:
-cd "C:\Program Files\RabbitMQ Server\rabbitmq_server-{version}\sbin"
-rabbitmq-plugins enable rabbitmq_management
-Access the UI: http://localhost:15672
-👤 Create a User
-Go to Admin > Add a user
-Set:
-Username: test
-Password: test
-Tags: administrator
-Assign permissions
-Note: Guest user can't connect remotely.
+---
 
-🖥️ Running Consumer
-Required Files
-SensorDataConsumer.java
-amqp-client-5.21.0.jar
-slf4j-api-2.0.13.jar
-slf4j-simple-2.0.13.jar
-Steps
+## 🛠 Platform Setup Guide
+
+### 1. RabbitMQ Installation
+
+* Download from [RabbitMQ Downloads](https://www.rabbitmq.com/download.html)
+* Enable management UI:
+
+  ```bash
+  cd "C:\Program Files\RabbitMQ Server\rabbitmq_server-{version}\sbin"
+  rabbitmq-plugins enable rabbitmq_management
+  ```
+* Access UI at: `http://localhost:15672`
+
+### 2. Create User
+
+* Username: `test`
+* Password: `test`
+* Tags: `administrator`
+* Note: Guest users can't connect remotely.
+
+### 3. Java Consumer Setup
+
+**Required files:**
+
+* `SensorDataConsumer.java`
+* `amqp-client-5.21.0.jar`
+* `slf4j-api-2.0.13.jar`
+* `slf4j-simple-2.0.13.jar`
+
+**Run steps:**
+
+```bash
 javac SensorDataConsumer.java
 java SensorDataConsumer
-Check RabbitMQ UI under Connections tab to verify.
+```
 
-🔒 Firewall Setup
-Open ports 15672 and 5672 in Windows Firewall.
+### 4. Firewall
 
-📱 Android App Setup
-Install the mobile app.
-Enter:
-IP address of RabbitMQ server
-Port: 5672
-Username: test
-Select sensors via UI
-Using Android Studio
-Extract and open the project
-Check sendDataService file for credentials
-Run the app on a device with USB/Wi-Fi debugging enabled
-✅ Testing
-Run RabbitMQ server and consumer
-Start app and begin data transmission
-Monitor logs and RabbitMQ Queues tab for activity
-Contributing
-All contributions are welcome! Feel free to fork, raise issues, or submit PRs.
+Ensure ports **15672** and **5672** are open in Windows Firewall.
+
+---
+
+## 📱 Mobile App Setup
+
+* Install the app via Android Studio or APK.
+* Set:
+
+  * RabbitMQ Server IP
+  * Port: `5672`
+  * Username: `test`
+* Select sensors to stream.
+* Check `sendDataService.java` for credential configs.
+
+---
+
+## ✅ Testing
+
+* Start RabbitMQ and the Java consumer
+* Launch the app and start data transmission
+* Monitor logs and RabbitMQ UI (`Queues`, `Connections` tabs)
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome!
+Feel free to fork, submit PRs, or report issues.
+

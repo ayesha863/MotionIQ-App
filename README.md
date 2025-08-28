@@ -1,7 +1,3 @@
-Here’s a clean, professional, and concise GitHub README description for your **`data_fetcher_mobile`** app (MotionIQ), keeping it well-organized and suitable for your GitHub repo:
-
----
-
 # MotionIQ – Data Fetcher Mobile
 
 **MotionIQ** is a simple and elegant Android app for collecting sensor data (accelerometer, gyroscope, magnetometer) and sending it to a RabbitMQ server for real-time human activity recognition (HAR).
